@@ -29,7 +29,7 @@ val guesses = mutableListOf<Char>()
 const val maxGuesses = 6
 var wrongGuesses = 0
 
-fun main(args: Array<String>) {
+fun main() {
     setupGame()
 }
 

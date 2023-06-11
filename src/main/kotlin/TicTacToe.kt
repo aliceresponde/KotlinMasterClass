@@ -14,7 +14,7 @@ val board = mutableListOf(mutableListOf<Char>())
 var gameOver = false
 
 
-fun main(args: Array<String>) {
+fun main() {
     initBoard()
     printBoard()
 
