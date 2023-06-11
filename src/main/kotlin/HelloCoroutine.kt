@@ -5,6 +5,23 @@ var counter: Int = 0
 
 fun main() {
     sampleCoroutineExceptionHandler()
+    sampleAsyncCoroutineExceptionHandler()
+}
+
+private fun sampleAsyncCoroutineExceptionHandler() {
+    runBlocking {
+        val defered = GlobalScope.async {
+            delay(1000L)
+            println("throwing exception from async")
+            throw ArithmeticException("exception in async")
+        }
+
+        try {
+            defered.await()
+        } catch (e: ArithmeticException) {
+            println("Caught ArithmeticException ${e.localizedMessage}")
+        }
+    }
 }
 
 private fun sampleCoroutineExceptionHandler() {
