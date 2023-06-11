@@ -26,7 +26,7 @@ private fun sampleAsyncCoroutineExceptionHandler() {
 
 private fun sampleCoroutineExceptionHandler() {
     runBlocking {
-        val myExceptionHandler = CoroutineExceptionHandler { coroutineContext, exception ->
+        val myExceptionHandler = CoroutineExceptionHandler { _, exception ->
             println("Exception thrown in one of the children: ${exception.localizedMessage}")
         }
 
